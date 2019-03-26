@@ -23,11 +23,11 @@ extension ActionClosurable where Self: UIButton {
 }
 
 public extension ActionClosurable where Self: UIRefreshControl {
-    public func onValueChanged(closure: @escaping (Self) -> Void) {
+    func onValueChanged(closure: @escaping (Self) -> Void) {
         on(.valueChanged, closure: closure)
     }
 
-    public init(closure: @escaping (Self) -> Void) {
+    init(closure: @escaping (Self) -> Void) {
         self.init()
         onValueChanged(closure: closure)
     }
